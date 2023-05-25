@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
+import SearchBar from "./SearchBar";
+
 import EditFlavour from "./edit-flavour.component";
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import { Card } from "react-bootstrap";
 
 const FlavourList = () => {
@@ -22,6 +22,12 @@ const FlavourList = () => {
 
   return (
     <div>
+      <div className="search-bar-container">
+        <div>
+          <SearchBar />
+        </div>
+        <div>SearchResults</div>
+      </div>
       {allFlavours &&
         allFlavours.map((flavour) => (
           <>
@@ -35,10 +41,10 @@ const FlavourList = () => {
                 </div>
               </div>
               <div className="button-container">
-                <button className="edit-button" onClick={EditFlavour}>
+                <Button className="edit-button" onClick={EditFlavour}>
                   Edit
-                </button>
-                <button className="delete-button">Delete</button>
+                </Button>
+                <Button className="delete-button">Delete</Button>
               </div>
             </Card>
           </>

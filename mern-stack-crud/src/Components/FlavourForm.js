@@ -1,5 +1,5 @@
 // Tuodaan react
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // Tuodaan axios
 import axios from "axios";
 import Button from "react-bootstrap/Button";
