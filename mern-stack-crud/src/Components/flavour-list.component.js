@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import SearchBar from "./SearchBar";
-
-import EditFlavour from "./edit-flavour.component";
+import SearchBar from "./searchBar";
 import Button from "react-bootstrap/Button";
 import { Card } from "react-bootstrap";
 
@@ -30,10 +28,10 @@ const FlavourList = () => {
       </div>
       {allFlavours &&
         allFlavours.map((flavour) => (
-          <>
+          <React.Fragment key={flavour.Id}>
             <Card className="card">
               <div className="card-body">
-                <p key={flavour.Id}>{flavour.title}</p>
+                <p>{flavour.title}</p>
                 <img src={flavour.Image} alt="" className="flavour-image" />
                 <div className="flavour-text">
                   <h2>{flavour.Flavour}</h2>
@@ -41,13 +39,11 @@ const FlavourList = () => {
                 </div>
               </div>
               <div className="button-container">
-                <Button className="edit-button" onClick={EditFlavour}>
-                  Edit
-                </Button>
+                <Button className="edit-button">Edit</Button>
                 <Button className="delete-button">Delete</Button>
               </div>
             </Card>
-          </>
+          </React.Fragment>
         ))}
     </div>
   );

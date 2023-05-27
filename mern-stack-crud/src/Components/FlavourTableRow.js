@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 // Luodaan FlavourTableRow
 const FlavourTableRow = (props) => {
-  const { Id, flavour, description, image } = props.obj;
+  const { flavour, description, image } = props.obj;
 
   const deleteFlavour = () => {
     axios
